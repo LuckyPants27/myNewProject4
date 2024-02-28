@@ -13,19 +13,24 @@ public class Main {
 
         int clientDeviceYear = 2015;
         int borderYear = 2015;
-        if (clientOS == iOS && clientDeviceYear < borderYear) {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientOS == iOS && clientDeviceYear >= borderYear) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOS == android && clientDeviceYear < borderYear) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (clientOS == android && clientDeviceYear >= borderYear) {
-            System.out.println("Установите версию приложения для Android по ссылке");
+
+        if (clientDeviceYear < borderYear) {
+            if (clientOS == iOS) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+            }
+        } else {
+            if (clientOS == iOS) {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для Android по ссылке");
+            }
         }
 
 
         int year = 2021;
-        if (year > 1584 && year % 4 == 0 && year % 100 != 0 || year % 400 == 00) {
+        if (year > 1584 && (year % 4 == 0 && year % 100 != 0 || year % 400 == 00)) {
             System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
